@@ -32,6 +32,6 @@ http.createServer(function (req, res) {
     res.write("Data : \n");
     res.write(data);
     res.end("");
-}).listen(3000);
+}).listen(80);
 
 console.log("Server started !");
