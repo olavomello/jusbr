@@ -1,7 +1,9 @@
 ﻿var http = require("http");
 var express = require("express");
 
-app.set( 'port', ( process.env.PORT || 3000 ));
+
+var port = 3000;
+// app.set( "port", ( process.env.PORT || 3000 ));
 
 
 // Static files
@@ -44,6 +46,6 @@ http.createServer(function (req, res) {
     
     // End
     res.end("");
-}).listen(3000);
+}).listen(port);
 
 console.log("Server started !");
