@@ -1,0 +1,28 @@
+{
+  "name": "jusbr",
+  "version": "1.0.0",
+  "description": "Rastreamento em processos brasileiros, com informações públicas, para monitoramento e alertas via e-mail de novos processos ou movimentações em processos existentes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olavomello/jusbr.git"
+  },
+  "keywords": [],
+  "author": "Olavo Mello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olavomello/jusbr/issues"
+  },
+  "homepage": "https://github.com/olavomello/jusbr#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "^0.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
