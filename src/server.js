@@ -1,6 +1,9 @@
 ﻿var http = require("http");
 var express = require("express");
 
+app.set( 'port', ( process.env.PORT || 3000 ));
+
+
 // Static files
 //app.use(express.static('src'));
 
