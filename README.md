@@ -1,2 +1,8 @@
-# jusbr
-Monitoramento de processos com busca através de nomes, CPFs e CNPJs
+# JusBR
+# Monitoramento de processos com busca através de nomes, CPFs e CNPJs - Brasilian lawsuits tracker
+
+Rastreamento em processos brasileiros, com informações públicas, para monitoramento e alertas via e-mail de novos processos ou movimentações em processos existentes.
+
+...
+
+Brasilian lawsuits tracker
