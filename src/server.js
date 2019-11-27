@@ -4,6 +4,7 @@ var express = require("express");
 // Static files
 //app.use(express.static('src'));
 
+/*
 // HTTP Options
 var options = {
     host: "www.jusbrasil.com.br",
@@ -24,14 +25,22 @@ request.on('error', function (e) {
     data = "Erro : " + e.message;
 });
 request.end();
+*/
 
 // 
+data = "Teste";
 http.createServer(function (req, res) {
+    
+    // Header
     res.writeHead(200, {'Content-Type': 'text/plain'});
+    
+    // Body
     res.write("Server started...\n");
     res.write("Data : \n");
     res.write(data);
+    
+    // End
     res.end("");
-}).listen(80);
+}).listen(3000);
 
 console.log("Server started !");
