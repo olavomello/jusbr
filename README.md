@@ -5,4 +5,4 @@ Rastreamento em processos brasileiros, com informações públicas, para monitor
 
 ...
 
-Brasilian lawsuits tracker with search by name or ID and email alerts to new lawsuits or changes on existents lawsuits.
+Brazilian lawsuits tracker with search by name or ID and email alerts to new lawsuits or changes.
