@@ -39,4 +39,4 @@ const getScript = (url) => {
 
 (async (url) => {
   console.log(await getScript(url));
-})("https://www.jusbrasil.com.br/busca?q=Olavo+Pereira+de+Mello+Neto");
+})("https://www.jusbrasil.com.br/busca?q='Google'");
