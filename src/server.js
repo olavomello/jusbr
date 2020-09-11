@@ -38,5 +38,6 @@ const getScript = (url) => {
 };
 
 (async (url) => {
+  console.log(url);
   console.log(await getScript(url));
-})("https://www.jusbrasil.com.br/busca?q='Google'");
+})("https://www.jusbrasil.com.br/diarios/busca?q='Google'");
