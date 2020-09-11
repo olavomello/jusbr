@@ -1,51 +1,42 @@
-﻿var http = require("http");
-var express = require("express");
+﻿// Arguments
+var args = process.argv.slice(2);
+console.log(args);
 
+const getScript = (url) => {
+  return new Promise((resolve, reject) => {
+    const http = require("http"),
+      https = require("https");
 
-var port = 3000;
-// app.set( "port", ( process.env.PORT || 3000 ));
+    let client = http;
 
+    if (url.toString().indexOf("https") === 0) client = https;
 
-// Static files
-//app.use(express.static('src'));
+    // Options // headers
 
-/*
-// HTTP Options
-var options = {
-    host: "www.jusbrasil.com.br",
-    path: "/topicos/2364939/uol"
-}
-var data = "";
-// Start request
-var request = http.request( options, function (res) {
-    res.on('data', function (chunk) {
-        data += chunk;
-    });
-    res.on('end', function () {
-        // console.log(data);
-    });
-});
-// Request error control
-request.on('error', function (e) {
-    data = "Erro : " + e.message;
-});
-request.end();
-*/
+    const options = {
+      headers: {
+        scheme: "https",
+        accept: "text/html",
+        "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6",
+        "cache-control": "max-age=0",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "user-agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36",
+      },
+    };
 
-// 
-data = "Teste";
-http.createServer(function (req, res) {
-    
-    // Header
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    
-    // Body
-    res.write("Server started...\n");
-    res.write("Data : \n");
-    res.write(data);
-    
-    // End
-    res.end("");
-}).listen(port);
+    client
+      .get(url, options, (resp) => {
+        let data = "";
+        resp.on("data", (chunk) => (data += chunk));
+        resp.on("end", () => resolve(data));
+      })
+      .on("error", (err) => reject(err));
+  });
+};
 
-console.log("Server started !");
+(async (url) => {
+  console.log(await getScript(url));
+})("https://www.jusbrasil.com.br/busca?q=Olavo+Pereira+de+Mello+Neto");
